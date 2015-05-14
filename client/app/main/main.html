@@ -1,0 +1,44 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Accedo Test</h1>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <h3><span class="span_h3">{{podcast_title}}</span></h3>
+  </div>
+  <div class="row">
+    <h4>{{podcast_description}}</h4>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-md-4">
+      <h1 class="page-header">Video List</h1>
+      <div kb-list ng-model="podcast" class="list list--vertical" ng-class="list--vertical" ng-change="changeSource({{podcast}})">
+        <div kb-item="podcast" ng-repeat="podcast in podcasts" class="list__item">
+          <p><span class="title">{{podcast.title[0]}}</span></p>
+          <p><span class="subtitle">{{podcast.pubDate[0]}}</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-4">
+      <h1 class="page-header">Video</h1>
+      <!--<video autoplay="autoplay" preload="auto">
+        <source src="{{url_video | trusted}}" type="{{video_type}}" />
+      </video>-->
+      <section class="video" ng-video>
+        <video vi-screen autoplay>
+        </video>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+      <p>Pedro Bustamante</p>
+  </div>
+</footer>

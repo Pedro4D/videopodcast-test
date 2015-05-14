@@ -1,5 +1,9 @@
 To start
+
+
 npm install
+
+bower install
 
 grunt build
 
